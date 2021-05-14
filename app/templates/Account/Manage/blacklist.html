@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="form-label-group mx-auto">
+  <p class = "h1 text-muted text-center mx-auto"> Blacklisted Claims </p>
+ </div> 
+<div class="container-table100"  style="width: 100%;">
+  <div class="wrap-table100">
+          <div class="table">
+
+              <div class="row-table  header ">
+                  <div class="cell">
+                    Member Name
+                  </div>
+                  <div class="cell">
+                    Patient Suffix
+                  </div>
+                  <div class="cell">
+                      Cause
+                  </div>
+                  <div class="cell">
+                    Fee Charged
+                  </div>
+                  <div class="cell">
+                    
+                  </div>
+              </div>
+              
+
+
+
+{% for item in data%}
+<div class="row-table">
+<div class="cell" data-title="Member Name">
+{{ item.member_name  }}
+</div>
+<div class="cell" data-title="Patient Suffix">
+  {{ item.patient_suffix }}
+</div>
+<div class="cell" data-title="Cause">
+  {{ item.cause }}
+</div>
+<div class="cell" data-title="Claims">
+  {{ item.fee_charged }}
+</div>
+<div class="cell" data-title="Fee Charged">
+  <a href="{{url_for('details',id=item.id)}}" class="btn btn-warning mx-auto my-2">View Full Claim</a>
+</div>
+</div>
+{% endfor %}
+
+
+
+
+</div>
+</div>
+</div>        
+{% endblock %}

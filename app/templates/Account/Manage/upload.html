@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="col-md-8 mx-auto">
+  <div class="form-label-group">
+    <p class = "h1 text-muted text-center mx-auto">Upload Claim </p>
+   </div> 
+
+   <form class="needs-validation" novalidate method = "POST" action = "{{url_for('evaluate')}}" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        
+        <input type="text" class="form-control" id="member_name" name = "member_name" placeholder="Member Name" value="" required>
+        <div class="invalid-feedback">
+          Valid Project name is required.
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        
+        
+        <select class="custom-select d-block w-100" id="state" name = "gender"required>
+          <option value="">Patient Gender </option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+     
+        </select>
+        <div class="invalid-feedback">
+          Please provide a Project Type .
+        </div> <div class="invalid-feedback">
+          Valid Project Type is required.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mb-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">@</span>
+        </div>
+        <input type="email" class="form-control" id="Artist_Name" name = "email" placeholder="Member Email" required>
+        <div class="invalid-feedback" style="width: 100%;">
+          Email is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      
+      <input type="text" class="form-control" name= "location" id="location" placeholder="Location">
+      <div class="invalid-feedback">
+        Please enter a valid Location
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        
+        <input type="text" class="form-control" id="employer" name = "employer" placeholder="Employer" value="" required>
+        <div class="invalid-feedback">
+          Valid Project name is required.
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        
+        
+        <select class="custom-select d-block w-100" id="state" name = "relationship"required>
+          <option value="">Relationship</option>
+          <option value="Husband">Husband</option>
+          <option value="Wife">Wife</option>
+          <option value="brother">Brother</option>
+          <option value="sister">Sister</option>
+          <option value="Aunt">Aunt</option>
+          <option value="Uncle">Uncle</option>
+          <option value="Grandmother">Grandmother</option>
+          <option value="Grandfather">Grandfather</option>
+          <option value="Nephew">Nephew</option>
+          <option value="Niece">Niece</option>
+          <option value="Niece">Other</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a Project Type .
+        </div> <div class="invalid-feedback">
+          Valid Project Type is required.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mb-3">
+      <input type="text" id="patient_name" name = "patient_name" class="form-control" placeholder="Patient Name" required>
+      <div class="invalid-feedback">
+        Please enter valid Genre.
+      </div>
+    </div>
+    <div class="mb-3">
+      <input type="text" id="patient_suffix" name = "patient_suffix" class="form-control" placeholder="Patient Suffix" required>
+      <div class="invalid-feedback">
+        Please enter valid Genre.
+      </div>
+    </div>
+<br />
+
+<div class="mb-3">
+  <label class = 'bold'>Patient D.O.B</label>
+  <input type="date" id="dep" name = "patient_dob" class="form-control" placeholder="Patient D.O.B" required>
+  <div class="invalid-feedback">
+    Please enter valid Genre.
+  </div>
+</div>
+<div class="mb-3">
+  <input type="number" id="dep" name = "number_of_dependants" class="form-control" placeholder="Number of Dependants" required>
+  <div class="invalid-feedback">
+    Please enter valid Genre.
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-6 mb-3">
+    
+    <input type="text" class="form-control" id="fee" name = "Fee_Charged" placeholder="Fee  Charged" value="" required>
+    <div class="invalid-feedback">
+      Valid Project name is required.
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    
+    
+    <select class="custom-select d-block w-100" id="cause" name = "cause"required>
+      <option value="">Cause..</option>
+      <option value="Road Traffic Accident">Road Traffic Accident</option>
+      <option value="Accident At Home">Accident At Home</option>
+      <option value="Accident At Work">Accident At Work</option>
+      <option value="Accident At Work">Other</option>
+         </select>
+    <div class="invalid-feedback">
+      Please provide a Project Type .
+    </div> <div class="invalid-feedback">
+      Valid Project Type is required.
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    
+    <input type="text" class="form-control" id="claims" name = "number_of_claims" placeholder="Number of Claims" value="" required>
+    <div class="invalid-feedback">
+      Valid Project name is required.
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    
+    
+    <input type="number" class="form-control" id="membership" name = "membership_period" placeholder="Membership Period" value="" required><div class="invalid-feedback">
+      Please provide a Project Type .
+    </div> <div class="invalid-feedback">
+      Valid Project Type is required.
+    </div>
+  </div>
+</div>
+<div class = "mb-3">    
+  <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+    </div>
+</form>
+    </div>
+
+    <div class="col-md-8 mx-auto">
+      <div class="form-label-group">
+          <a href="" class="btn btn-danger  mx-auto my-2">Back</a>
+         </div> 
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="form-label-group mx-auto">
+  <p class = "h1 text-muted text-center mx-auto">Clients </p>
+ </div> 
+<div class="container-table100"  style="width: 100%;">
+  <div class="wrap-table100">
+          <div class="table">
+
+              <div class="row-table  header ">
+                  <div class="cell">
+                    Member Name
+                  </div>
+                  <div class="cell">
+                    Patient Suffix
+                  </div>
+                  <div class="cell">
+                      Cause
+                  </div>
+                  <div class="cell">
+                      Claims
+                  </div>
+                  <div class="cell">
+                    Fee Charged
+                  </div>
+              </div>
+              
+
+
+
+
+<div class="row-table">
+<div class="cell" data-title="Member Name">
+{{ data[0] }}
+</div>
+<div class="cell" data-title="Patient Suffix">
+  {{ data[1] }}
+</div>
+<div class="cell" data-title="Cause">
+  {{ data[2] }}
+</div>
+<div class="cell" data-title="Claims">
+  {{ data[3] }}
+</div>
+<div class="cell" data-title="Fee Charged">
+  {{ data[4] }}
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>        
+{% endblock %}

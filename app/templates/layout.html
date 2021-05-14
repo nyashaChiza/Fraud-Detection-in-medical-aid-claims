@@ -1,0 +1,99 @@
+
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="">
+  
+      <title>Medical Insurance</title>
+  
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel = "stylesheet" href =" {{url_for('static', filename = 'css/bootstrap.css')}}"> 
+  
+      <!-- Custom styles for this template -->
+      <link rel = "stylesheet" href =" {{url_for('static', filename = 'css/style.css')}}"> 
+      <link rel = "stylesheet" href =" {{url_for('static', filename = 'css/signin.css')}}"> 
+      <link rel = "stylesheet" href =" {{url_for('static', filename = 'css/form-validation.css')}}"> 
+      <link rel = "stylesheet" href =" {{url_for('static', filename = 'css/main.css')}}"> 
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+
+      <link rel="stylesheet" type="text/css" href=" {{url_for('static', filename = 'fonts/font-awesome-4.7.0/css/font-awesome.min.css')}} ">
+  
+
+
+    <!--===============================================================================================-->
+  
+
+
+    </head>
+  
+    <body>
+  
+      <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+          <div class="container">
+            <div class="row">
+      
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong class ="">Medical Insurance</strong>
+            </a>
+          
+          </div>
+        </div>
+      </header>
+  
+      <main role="main">
+        <br />
+       
+        <section style = "padding: 12px;" padding-bottom = "10px" class="jumbotron text-center ">
+          <div class="container">
+            <h2 class="jumbotron-heading">Claim Evaluation</h2>
+            <div class="lead text-muted"><p>This is a machine learning tool used to evaluate medical aid claims. </p> 
+              <a href="{{url_for('upload')}}" class="btn btn-secondary  mx-auto my-2">Home</a>  <a href="{{url_for('blacklist')}}" class="btn btn-secondary  mx-auto my-2">Blacklist</a>  <a href='{{url_for("claim")}}' class="btn btn-secondary  mx-auto my-2">Claims</a>   <a href="{{url_for('sign_in')}}" class="btn btn-danger  mx-auto my-2">Log Out</a>
+            </div>
+          </div>
+        </section>
+  
+        <div class="album py-5 bg-light"  style = "min-height:389px;">
+          <div class="container">
+  
+            <div class="row">
+                {% block body %}
+                
+                {% endblock %}
+                
+            </div>
+          </div>
+        </div>
+  
+      </main>
+  <br />
+
+  
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/static/js/jquery-slim.min.js"><\/script>')</script>
+      <script src='{{url_for("static",filename ="js/popper.min.js")}}'></script>
+      <script src='{{url_for("static",filename ="js/bootstrap.js")}}'></script>
+      <script src='{{url_for("static",filename ="js/holder.min.js")}}'></script>
+      <!--===============================================================================================-->	
+	<script src='{{url_for("static",filename ="vendor/jquery/jquery-3.2.1.min.js")}}'></script>
+  <!--===============================================================================================-->
+  
+  </div>
+
+    </body>
+  </html>
+  
