@@ -1,16 +1,17 @@
-from flask import Flask, flash, session, render_template, request, url_for, send_file
-from flask_sqlalchemy import SQLAlchemy
 import os
-from werkzeug.utils import secure_filename
 #from methods import File_handler
 import joblib
-import random
+from loguru import logger
+from random import choice, randint
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.utils import secure_filename
+from flask import Flask, flash, session, render_template, request, url_for, send_file
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "this_is_my_secret_key"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///Content.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ewd_user:MountainFire2022@localhost/Content'#"sqlite:///Content.db"
 
 db = SQLAlchemy(app)
 model =joblib.load('model & Pipeline/Classifier.pkl')
@@ -71,8 +72,8 @@ def upload():
 @app.route('/evaluate', methods = ['POST','GET'])
 def evaluate():
     if request.method == 'POST':
-        state = random.choice([0,0,1])
-        score = random.randint(30,65)
+        state = choice([0,0,1])
+        score = randint(30,65)
         session['eva'] =[state, score, 89]
         
         claim = Claims(
@@ -94,7 +95,7 @@ def evaluate():
         )
         db.session.add(claim)
         db.session.commit()
-        print('data saved!')
+        logger.sucess('data saved!')
         
         return view()
     template = 'Account/manage/upload.html'
@@ -103,7 +104,7 @@ def evaluate():
 @app.route('/view')
 def view():
     data = Claims.query.order_by(Claims.id.desc()).first()
-    print(data)
+    logger.info(data)
     template = 'Account/manage/viewContent.html'
     
     return render_template(template,eva=session['eva'], data=data)

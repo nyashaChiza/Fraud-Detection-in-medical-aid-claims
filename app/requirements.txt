@@ -4,3 +4,4 @@ Flask-SQLAlchemy==2.5.1
 Werkzeug==1.0.1
 numpy==1.20.2
 pandas==1.2.4
+loguru
